@@ -3,7 +3,7 @@
 Roz update karo. [x] = done
 
 ## Phase 1
-- [ ] W1 OSI/TCP-IP, Packet Tracer install, Lab 01
+- [x] W1 OSI/TCP-IP, Packet Tracer install, Lab 01
 - [ ] W2 IP addressing
 - [ ] W3 Subnetting (100 questions solve)
 - [ ] W4 Switching + IOS CLI

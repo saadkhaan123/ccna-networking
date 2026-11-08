@@ -26,6 +26,8 @@ function home(){
   <a class="btn" href="${n===0?"#setup":next?"#w"+next.w:"#career"}">${n===0?"🚀 Pehle Setup karo":next?"▶ Week "+next.w+" continue karo":"🎉 Career plan dekho"}</a>
   <a class="btn sec" href="#plan">🗓️ Daily plan</a></div>
   <div class="stats"><div class="stat"><b>${n}/24</b><span>Weeks complete</span></div><div class="stat"><b>24</b><span>Weeks</span></div><div class="stat"><b>${COURSE.reduce((a,c)=>a+c.quiz.length,0)}</b><span>Quiz questions</span></div><div class="stat"><b>${streak()}</b><span>Day streak 🔥</span></div></div>
+  <img src="banner.png" alt="CCNA journey banner" style="width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)">
+  <h2>My Journey</h2><div class="card"><div style="display:grid;grid-template-columns:repeat(12,1fr);gap:8px">${COURSE.map(c=>`<a href="#w${c.w}" title="Week ${c.w}: ${esc(c.title)}" style="text-decoration:none;height:40px;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:13px;${done[c.w]?"background:linear-gradient(135deg,#38bdf8,#4ade80);color:#04210f":"background:var(--panel2);color:var(--mute);border:1px solid var(--line)"}">${done[c.w]?"✓":c.w}</a>`).join("")}</div><p class="mute" style="margin:12px 0 0;font-size:13px">${n} of 24 weeks complete. Green = done. Hover karke topic dekho.</p></div>
   <h2>Sab Weeks</h2><div class="grid">${COURSE.map(c=>`<a class="pcard ${done[c.w]?"done":""}" href="#w${c.w}"><span class="badge">Week ${c.w}</span><br><b style="display:block;margin-top:8px">${esc(c.title)}</b><span class="mute" style="font-size:12px">${esc(c.phase.split(" – ")[1])}</span>${done[c.w]?'<br><span style="color:var(--ok)">✓ Done</span>':""}</a>`).join("")}</div>`;
 }
 

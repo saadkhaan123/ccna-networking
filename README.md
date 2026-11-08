@@ -1,17 +1,38 @@
-# Networking Career Project (Web Developer → Network Engineer)
+<p align="center"><img src="assets/banner.png" alt="Web Developer to Network Engineer: CCNA in 24 weeks"></p>
 
-Goal: 6 months mein job-ready Network Engineer (CCNA level) AI ki madad se.
+# CCNA in 24 Weeks: Web Developer → Network Engineer
 
-## Folder structure
-- `00-portfolio-analysis.md`  – tumhari current portfolio ka analysis + networking ke liye kya karna hai
-- `01-roadmap.md`             – 24 hafton ka poora course (week by week)
-- `02-ai-study-system.md`     – AI se fast seekhne ke prompts aur daily routine
-- `03-labs/`                  – hands-on labs (Packet Tracer / GNS3)
-- `04-progress-tracker.md`    – roz tick karo, progress dekho
-- `05-career-plan.md`         – certifications, CV, LinkedIn, jobs, freelancing
+Hafiz Muhammad Saad Khan's public learning log. 24-week CCNA roadmap, labs, and a study website, built with AI (Claude Code).
 
-## Shuru kaise karein (aaj hi)
-1. Cisco Packet Tracer install karo (free: Cisco Networking Academy, "Getting Started with Packet Tracer" course).
-2. `01-roadmap.md` mein Week 1 kholo.
-3. `02-ai-study-system.md` ka "Daily routine" follow karo (2-3 ghante/din).
-4. Har din `04-progress-tracker.md` update karo.
+![progress](https://img.shields.io/badge/progress-1%2F24%20weeks-4ade80?style=for-the-badge)
+![cert](https://img.shields.io/badge/goal-CCNA%20200--301-38bdf8?style=for-the-badge)
+![tool](https://img.shields.io/badge/lab-Packet%20Tracer%209.0.1-a78bfa?style=for-the-badge)
+
+## Journey
+
+| Week | Topic | Status |
+|------|-------|--------|
+| 1 | OSI/TCP-IP, first Packet Tracer lab | ✅ Done |
+| 2 | IPv4 addressing | ⬜ |
+| 3 | Subnetting | ⬜ |
+| 4 | Ethernet, switching, Cisco CLI | ⬜ |
+| 5-8 | VLANs, inter-VLAN, STP, switch security | ⬜ |
+| 9-14 | Static routing, OSPF, DHCP/NAT, IPv6, Project 1 | ⬜ |
+| 15-19 | ACLs, VPN, wireless, services, WAN/cloud | ⬜ |
+| 20-22 | Python automation, APIs, Wireshark | ⬜ |
+| 23-24 | Mock exams, exam booking, job hunt | ⬜ |
+
+## What's inside
+- [`site/`](site/index.html): offline study website (24 lessons, quizzes, subnet calculator, drills). Open `site/index.html` in Chrome.
+- [`labs/`](labs): Packet Tracer files (`lab01.pkt`)
+- `01-roadmap.md`: full week by week plan
+- `02-ai-study-system.md`: AI prompts and daily routine
+- `03-labs/`: lab instructions
+- `05-career-plan.md`: certifications and job plan
+- [`assets/`](assets): banner and social card
+
+## Lab 01: first network
+1 switch (2960) + 3 PCs, 192.168.1.0/24, ping tested between all hosts.
+
+## Daily routine
+15 min revision · 60 min video · 60 min lab · 15 min notes.
