@@ -98,10 +98,18 @@ try{const t=localStorage.getItem("nettheme");if(t)document.documentElement.datas
 
 function week(n){
   const c=COURSE.find(x=>x.w===n);if(!c)return home();
+  const D=(typeof DETAIL!=="undefined"&&DETAIL[n])||null;
+  if(D&&!c._q){c.quiz=c.quiz.concat(D.extraQuiz||[]);c._q=1}
+  const detailHtml=D?`<h2>📚 Detailed Lesson <span class="badge">asaan zaban mein</span></h2>
+  <div class="card"><b>Is week ke sections:</b><ol>${D.sections.map((s,i)=>`<li><a href="#sec${i}" onclick="document.getElementById('sec${i}').scrollIntoView({behavior:'smooth'});return false">${esc(s.h.replace(/^\d+\.\s*/,""))}</a></li>`).join("")}</ol></div>
+  ${D.sections.map((s,i)=>`<div class="card" id="sec${i}"><h3>${esc(s.h)}</h3>${s.html}</div>`).join("")}`:"";
+  const labHtml=D&&D.lab?`<h2>🧪 ${esc(D.lab.title)}</h2><div class="card"><p>${esc(D.lab.intro)}</p></div><ol class="steps">${D.lab.steps.map(s=>`<li>${s}</li>`).join("")}</ol>
+  <h3 style="margin-top:18px">🛠️ Masla aaye to</h3><div class="card"><table><tr><th>Problem</th><th>Hal</th></tr>${D.lab.trouble.map(t=>`<tr><td>${esc(t[0])}</td><td>${esc(t[1])}</td></tr>`).join("")}</table></div>`:`<h2>🧪 Lab</h2><div class="card">${esc(c.lab)}</div>`;
   main.innerHTML=`<span class="badge">${esc(c.phase)}</span><h1>Week ${c.w}: ${esc(c.title)}</h1>
-  <h2>📖 Concepts</h2><div class="card"><ul class="pts">${c.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>
+  ${detailHtml}
+  <h2>⚡ Quick Summary</h2><div class="card"><ul class="pts">${c.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>
   <h2>🎥 Video</h2><div class="card">${esc(c.video)}<br><a class="btn sec" target="_blank" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.video)}">YouTube par dhoondo</a></div>
-  <h2>🧪 Lab</h2><div class="card">${esc(c.lab)}</div>
+  ${labHtml}
   ${c.cmds.length?`<h2>⌨️ Commands</h2><div class="card"><pre>${c.cmds.map(esc).join("\n")}</pre></div>`:""}
   <h2>❓ Quiz</h2><div id="quiz"></div><div id="score" class="card"></div>
   <h2>🤖 AI se poochho</h2><div class="card"><button class="sec" id="cp">Is week ka AI prompt copy karo</button></div>
